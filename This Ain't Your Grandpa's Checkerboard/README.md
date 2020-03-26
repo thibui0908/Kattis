@@ -17,29 +17,41 @@ WBBW
 WBWB
 BWWB
 BWBW
+
 1
+
 Sample Input 2	Sample Output 2
+
 4
 BWWB
 BWBB
 WBBW
 WBWW
+
 0
+
 Sample Input 3	Sample Output 3
+
 6
+
 BWBWWB
 WBWBWB
 WBBWBW
 BBWBWW
 BWWBBW
 WWBWBB
+
 0
+
 Sample Input 4	Sample Output 4
+
 6
+
 WWBBWB
 BBWWBW
 WBWBWB
 BWBWBW
 BWBBWW
 WBWWBB
+
 1

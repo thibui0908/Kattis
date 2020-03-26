@@ -1,0 +1,80 @@
+import java.util.*;
+
+public class Checkerboard {
+    public static int checkBlackWhite(ArrayList<String> line)
+    {
+        int blackCounter = 0;
+        int whiteCounter = 0;
+        for (int i = 0; i < line.size(); i++)
+        {
+            if (line.get(i).equals("B"))
+            {
+                blackCounter++;
+            }
+            else
+            {
+                whiteCounter++;
+            }
+        }
+        if (blackCounter!=whiteCounter)
+            return 0;
+        return 1;       
+    }
+    public static int checker(int number, String[][] grid)
+    {
+        
+        for (int i = 0; i < number; i++)
+        {
+            ArrayList<String> column = new ArrayList<String>();
+            for (int j = 0; j < number; j++)
+            {
+                column.add(grid[i][j]);
+                if (i < number - 2)
+                {
+                    if (grid[i][j].equals(grid[i+1][j])&& grid[i][j].equals(grid[i+2][j]))
+                    {
+                        return 0;
+                    }
+                }
+            }
+            if (checkBlackWhite(column)==0)
+                return 0;
+        }
+        
+        for (int j = 0; j < number; j++)
+        {
+            ArrayList<String> row = new ArrayList<String>();
+            for (int i = 0; i < number; i++)
+            {
+                row.add(grid[i][j]);
+                if (i < number - 2)
+                {
+                    if (grid[i][j].equals(grid[i+1][j])&& grid[i][j].equals(grid[i+2][j]))
+                    {
+                        return 0;
+                    }
+                }
+            }
+            if (checkBlackWhite(row)==0)
+                return 0;
+        }
+        return 1;
+        
+    }
+    
+    public static void main (String[] args)
+    {
+    Scanner checker = new Scanner(System.in);  
+    int num = checker.nextInt();
+    String[][] grid = new String[num][num];
+    for (int i = 0; i < num; i++)
+    {
+         String line = checker.next();
+         for (int j = 0; j < num; j++)
+         {
+             grid[i][j] = line.substring(j,j+1);
+         }
+    }
+    System.out.println(Checkerboard.checker(num, grid));
+    }
+}
